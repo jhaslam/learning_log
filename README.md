@@ -39,11 +39,18 @@ First time setup:
 ## Deploying to Heroku
 - Add `SECRET_KEY=<your secret key>` to your heroku environment
   - `heroku config:set --app='jhaslam-learning-log' SECRET_KEY='<some_secret_key>'
-- Set up the database on Heroku:  
-  `heroku run python manage.py migrate`
+- Set up the database on Heroku:
+  ```
+  heroku run bash
+
+  > python manage.py makemigrations learning_logs
+  > python manage.py migrate
+  > exit
+  ```  
 - Create a superuser on Heroku:
   ```
   heroku run bash
-  python manage.py createsuperuser
-  exit
+
+  > python manage.py createsuperuser
+  > exit
   ```
