@@ -1,4 +1,6 @@
 # Learning Log
+![screenshot](docs/screenshot.png)
+
 A simple Django / SQLite application, written for the purposes of ramping-up
 with Python and Django and reminding myself of the core concepts.
 
