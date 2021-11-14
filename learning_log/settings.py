@@ -25,7 +25,7 @@ LOCAL_DEVELOPMENT: bool = env_local_dev == 'TRUE'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if LOCAL_DEVELOPMENT:
-    SECRET_KEY = 'django-insecure-3$fvsz@2a)hc603*nw=z)snmn$m1&px#^_8odwamkxi!c)^k=7'
+    SECRET_KEY = os.getenv('SECRET_KEY') or 'django-insecure-3$fvsz@2a)hc603*nw=z)snmn$m1&px#^_8odwamkxi!c)^k=7'
 else:
     SECRET_KEY = os.getenv('SECRET_KEY')
 
