@@ -8,13 +8,14 @@ The following are the steps required to download and
 
 ### Download the application
 - Install Python >= 3.9
-  - 3.10 also confirmed working
+  - 3.10 confirmed working
 - Fetch contents of this project:
   - `git init`
   - `git pull https://github.com/jhaslam/learning_log.git`
-- Fetch this project's dependency closure. From the command prompt:
+- Create and activate this project's development environment:
   - `python -m venv project_env`
   - `source ./project_env/Scripts/activate`
+- Fetch this project's dependency closure:
   - `pip install -r requirements.txt`
 
 ### Initialize the Database
@@ -24,8 +25,9 @@ First time setup:
 ### Create an admin user
 - `python manage.py createsuperuser`
 
-### Start the Development Server
-- `python manage.py runserver`
+### Start the Development Server in your Local Dev Environment
+- From UNIX / Bash / Zsh: `LOCAL_DEV=TRUE python manage.py runserver`
+- From Windows / Powershell: `$env:LOCAL_DEV='TRUE'; python manage.py runserver`
 
 ### Visit the admin console
 - [`http:\\localhost:8000\admin`](http:\\localhost:8000\admin)
@@ -33,3 +35,14 @@ First time setup:
 
 ### Visit the main app page
 - [`http:\\localhost:8000`](http:\\localhost:8000)
+
+## Deploying to Heroku
+- Add `SECRET_KEY=<your secret key>` to your heroku environment
+- Set up the database on Heroku:  
+  `heroku run python manage.py migrate`
+- Create a superuser on Heroku:
+  ```
+  heroku run bash
+  python manage.py createsuperuser
+  exit
+  ```
