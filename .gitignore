@@ -4,4 +4,4 @@ __pycache__
 *.code-workspace
 /project_env/
 *.sqlite3
-# */migrations
+*/migrations

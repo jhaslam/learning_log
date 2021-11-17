@@ -20,20 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-env_local_dev = os.getenv('LOCAL_DEV', default='FALSE').upper()
-LOCAL_DEVELOPMENT: bool = env_local_dev == 'TRUE'
-
 # SECURITY WARNING: keep the secret key used in production secret!
-if LOCAL_DEVELOPMENT:
-    SECRET_KEY = os.getenv('SECRET_KEY') or 'django-insecure-3$fvsz@2a)hc603*nw=z)snmn$m1&px#^_8odwamkxi!c)^k=7'
-else:
-    SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-3$fvsz@2a)hc603*nw=z)snmn$m1&px#^_8odwamkxi!c)^k=7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if LOCAL_DEVELOPMENT:
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -144,7 +135,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 LOGIN_URL = 'users:login'
-
-# Heroku settings.
-import django_heroku
-django_heroku.settings(locals())
