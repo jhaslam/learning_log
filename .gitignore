@@ -1,10 +1,22 @@
+# MacOS Ignores
 .DS_Store
-.vscode
-__pycache__
-*.code-workspace
-/project_env/
-*.sqlite3
-*/migrations
 
-# Do not commit environment variables
+# IDE Workspace Ignores
+.vscode
+*.code-workspace
+*.theia-workspace
+
+# Security Ignores
+# No Environment variable configs
 .env
+# No Databases
+*.sqlite3
+
+# Python Development Environment Ignores
+__pycache__
+/project_env/
+.python-version
+
+# Local Development Ignores
+# Include this is .git/info/exclude, if needed.
+# */migrations
